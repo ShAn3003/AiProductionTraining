@@ -1,6 +1,6 @@
 # BUILD A WELL STURCUTRED SYSTEM TO DETECT 肺部结节 BASE ON THE CT IMAGE -- NORTHEAST UNIVERSITY ShAn_3003
 ## THOUGHT AND STEP
-### Step01
+### Step01 数据预处理
 1. 数据整理：将对应的dcmi图片和对应的xml文件路径写入csv文件中方便下一步处理：generate_csv.ipynb  （为什么1号病人的study1里面的00000文件夹下面的dcmi这么少，也没有68.xml对应的dcmi）
 2. dcmi文件处理：后续需要学习一下dcmi文件如何转化到jpg图片（不同公司的窗宽、窗位不同）preprocess_dcmi.ipynb *发现采用了窗宽窗位优化效果不好，在0001号数据集上，直接对应变换更好*
 3. dcmi Problem:使用simpleITK和pydicom读出来的图片可视化之后效果不同，应该选择哪种
@@ -88,3 +88,10 @@ In DICOM (Digital Imaging and Communications in Medicine) images, the attributes
 </div>  
   
 *****  
+
+### Step02: 选择合适的模型yolo深度学习模型
+
+******
+*****
+### Step03: 暂时跳过步骤02，完成界面设计，采用C/S架构
+*****
