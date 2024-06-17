@@ -17,58 +17,77 @@
       <small>--written by shanxie</small>
     </h1>
     <br>
-
-    <form class="form-inline" method="post" enctype="multipart/form-data">
-      <div class="form-group">
-        <input type="file" id="dicom" name="dicomfile">
-      </div>
-      <button type="submit" class="btn btn-primary">submit</button>
-    </form>
+    <div class="center-block">
+      <form class="form-inline" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" id="dicom" name="dicomfile">
+        </div>
+        <button type="submit" class="btn btn-primary">submit</button>
+      </form>
+    </div>
     <br>
-
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-12">
+        <div class="alert alert-success">
+          we detect {{count}} Nudules ! Below is the visualized image
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title text-center">Original Image File</h3>
           </div>
           <div class="panel-body">
-            <br>
             <img id="displayImage" src="{{origin_image_path}}" class="img-responsive" alt="Original CT File"
               width="100%" height="100%">
           </div>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title text-center">Detected LungNudules</h3>
           </div>
           <div class="panel-body">
-            <p class="text-center">we detect {{count}} Nudules ! Below is the visualized image </p>
-            <br>
+
             <img id="visualizedImage" src="{{visualized_image_path}}" class="img-responsive" alt="Original CT File"
               width="100%" height="100%">
           </div>
         </div>
       </div>
-      <div class="col-md-2">
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Choose which nudule to view the detail.</h3>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" method="post" action="/select">
+              <div class="form-group">
+                {% for i in range(count) %}
+                <label class="radio">
+                  <input type="radio" name="nodule" id="Nodule{{ i }}" value="Nodule{{ i }}" {% if i==0 %}checked{% end
+                    %}> nodule{{ i }}
+                </label>
+                {% end %}
+                <div class="clearfix"></div>
+                <button type="submit" class="btn btn-block btn-primary">confirm</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title text-center">Details</h3>
           </div>
           <div class="panel-body">
-            <p class="text-center">Choose which nudule to check the detail.</p>
-            <form method="post" action="/select">
-              <div>
-                  {% for i in range(count) %}
-                  <label class="radio-inline">
-                      <input type="radio" name="nodule" id="Nodule{{ i }}" value="Nodule{{ i }}" {% if i == 0 %}checked{% end %}> Nodule{{ i }}
-                  </label>
-                  {% end %}
-              </div>
-              <button type="submit" class="btn btn-primary">Select Nodule</button>
-          </form>
             <div>
               <img id="ChoosedImage" src="{{choosed_image_path}}" class="img-responsive" alt="detail" width="100%"
                 height="100%">
@@ -77,8 +96,6 @@
         </div>
       </div>
     </div>
-
-
 </body>
 
 </html>
