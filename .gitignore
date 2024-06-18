@@ -3,4 +3,5 @@ Data
 Png
 yolo
 visualize_combined
+augmented_yolo
 *.csv

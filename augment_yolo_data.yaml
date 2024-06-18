@@ -1,0 +1,11 @@
+# data path
+path: D:/Desktop/AiProductionTraining/augmented_yolo
+
+train: train
+test: test
+val: validation
+
+nc: 1
+
+names: 
+  0: LungNudule
