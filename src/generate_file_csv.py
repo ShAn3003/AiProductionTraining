@@ -91,5 +91,5 @@ def process_data_directory(data_dir):
 
 
 if __name__ == "__main__":
-    data_dir = "../Data"
+    data_dir = "E:/LIDC-IDRI"
     process_data_directory(data_dir)
