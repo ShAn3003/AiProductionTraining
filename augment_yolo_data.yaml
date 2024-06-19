@@ -1,6 +1,4 @@
-# data path
-path: D:/Desktop/AiProductionTraining/augmented_yolo
-
+path : /home/ma-user/work/AiProductionTraining/augmented_yolo
 train: train
 test: test
 val: validation
