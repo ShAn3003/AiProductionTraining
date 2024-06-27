@@ -1,4 +1,4 @@
-path : /home/ma-user/work/AiProductionTraining/augmented_yolo
+path : D:/Desktop/AiProductionTraining/augmented_yolo
 train: train
 test: test
 val: validation

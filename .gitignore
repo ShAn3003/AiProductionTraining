@@ -12,7 +12,15 @@ LND5
 augmented_yolo.zip
 augmented_yolo_1.zip
 
+__pycache__
+
+*.pt
+
 static/predict
 static/uploads
 static/origin
 static/details
+
+Train_Yolo
+
+ipynb
